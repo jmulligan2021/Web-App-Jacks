@@ -10,47 +10,125 @@
 </head>
 
 <body>
-     <section class="hero is-success is-fullheight">
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <div class="column is-4 is-offset-4">
-                    <h3 class="title has-text-black">Login</h3>
-                    <hr class="login-hr">
-                    <p class="subtitle has-text-black">Please login to proceed.</p>
-                    <div class="box">
-                        <figure class="avatar">
-                            <img src="https://placehold.it/128x128">
-                        </figure>
-                        <form>
-                            <div class="field">
-                                <div class="control">
-                                    <input class="input is-large" type="email" placeholder="Your Email" autofocus="">
-                                </div>
-                            </div>
-
-                            <div class="field">
-                                <div class="control">
-                                    <input class="input is-large" type="password" placeholder="Your Password">
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label class="checkbox">
-                  <input type="checkbox">
-                  Remember me
-                </label>
-                            </div>
-                            <button class="button is-block is-info is-large is-fullwidth">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
-                        </form>
-                    </div>
-                    <p class="has-text-grey">
-                        <a href="../">Sign Up</a> &nbsp;·&nbsp;
-                        <a href="../">Forgot Password</a> &nbsp;·&nbsp;
-                        <a href="../">Need Help?</a>
-                    </p>
-                </div>
+    <section class="section">
+         <div class="columns">
+            <div class="column is-4 is-offset-4">
+               <div class="field">
+                  <label class="label">Name</label>
+                  <div class="control">
+                     <input class="input" type="text" placeholder="Text input">
+                  </div>
+               </div>
+               <div class="field">
+                  <label class="label">Username</label>
+                  <div class="control has-icons-left has-icons-right">
+                     <input class="input is-success" type="text" placeholder="Text input" value="bulma">
+                     <span class="icon is-small is-left">
+                     <i class="fa fa-user"></i>
+                     </span>
+                     <span class="icon is-small is-right">
+                     <i class="fa fa-check"></i>
+                     </span>
+                  </div>
+                  <p class="help is-success">This username is available</p>
+               </div>
+               <div class="field">
+                  <label class="label">Email</label>
+                  <div class="control has-icons-left has-icons-right">
+                     <input class="input is-danger" type="email" placeholder="Email input" value="hello@gmail.com">
+                     <span class="icon is-small is-left">
+                     <i class="fa fa-envelope"></i>
+                     </span>
+                     <span class="icon is-small is-right">
+                     <i class="fa fa-warning"></i>
+                     </span>
+                  </div>
+                  <p class="help is-danger">This email is invalid</p>
+               </div>
+               <div class="field">
+                  <label class="label">Password</label>
+                  <div class="control">
+                     <input class="input" type="text" placeholder="Password">
+                  </div>
+               </div>
+               <div class="field">
+                  <label class="label">Do You Know of Joe Swanson</label>
+                  <div class="control">
+                     <div class="select">
+                        <select>
+                           <option>Select</option>
+                           <option>Yes</option>
+                           <option>No (leave this site if you choose this)</option>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <div class="field">
+                  <div class="control">
+                     <label class="checkbox">
+                     <input type="checkbox">
+                     I agree to the <a href="#">terms and conditions</a>
+                     </label>
+                  </div>
+               </div>
+               <div class="field is-grouped">
+                  <div class="control">
+                     <button class="button is-link" href="signedup.html">Submit</button>
+                  </div>
+               </div>
             </div>
-        </div>
-    </section>
+         </div>
+      </section>
+ 
+    <script async type="text/javascript" src="../js/bulma.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDhz_tfx3zxv7T85zfQRuLaS2xbl8D6HKs",
+    authDomain: "webapp-jacks.firebaseapp.com",
+    databaseURL: "https://webapp-jacks.firebaseio.com",
+    projectId: "webapp-jacks",
+    storageBucket: "webapp-jacks.appspot.com",
+    messagingSenderId: "261322568580",
+    appId: "1:261322568580:web:b6fd78523c4d1b2ffb23d1",
+    measurementId: "G-24T2KRQLCR"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+});
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+});
+</script>
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="/__/firebase/7.7.0/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="/__/firebase/7.7.0/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="/__/firebase/7.7.0/firebase-auth.js"></script>
+  <script src="/__/firebase/7.7.0/firebase-firestore.js"></script>
+        <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
     <script async type="text/javascript" src="../js/bulma.js"></script>
     </body>
 
